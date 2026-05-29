@@ -1,37 +1,45 @@
-# Flask Web App Tutorial
+# Flask Web App – REST API Enhancement
 
-## Setup & Installation
+## Project Overview
 
-Make sure you have the latest version of Python installed.
+This project is based on the Flask Web Application Tutorial by Tech With Tim.  
+The original application is a web-based note-taking system with user authentication.
 
-```bash
-git clone <repo-url>
-```
+This project enhances the original application by adding a **REST API feature** that allows full CRUD operations on notes using JSON.
 
-```bash
-pip install -r requirements.txt
-```
+---
 
-## Running The App
+## Original Application Features
 
-```bash
-python main.py
-```
+- User registration and login system
+- Create, view, and delete notes through a web interface
+- SQLite database integration
+- Flask-Login authentication system
 
-## Viewing The App
+---
 
-Go to `http://127.0.0.1:5000`
+## Added Feature: REST API for Notes
 
+A RESTful API was implemented to manage notes without using the frontend.
 
-# 💻 Launch Your Software Development Career Today!  
+### API Endpoints
 
-🎓 **No degree? No problem!** My program equips you with everything you need to break into tech and land an entry-level software development role.  
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST   | /api/notes | Create a new note |
+| GET    | /api/notes | Retrieve all notes |
+| GET    | /api/notes/<id> | Retrieve a single note |
+| PUT    | /api/notes/<id> | Update a note |
+| DELETE | /api/notes/<id> | Delete a note |
 
-🚀 **Why Join?**  
-- 💼 **$70k+ starting salary potential**  
-- 🕐 **Self-paced:** Complete on your own time  
-- 🤑 **Affordable:** Low risk compared to expensive bootcamps or degrees
-- 🎯 **45,000+ job openings** in the market  
+---
 
-👉 **[Start your journey today!](https://techwithtim.net/dev)**  
-No experience needed—just your determination. Future-proof your career and unlock six-figure potential like many of our students have!  
+## Request / Response Format
+
+### Example: Create Note
+
+**Request:**
+```json
+{
+  "data": "My first API note"
+}
